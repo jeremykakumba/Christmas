@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Merry Christmas ❤️</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(#0a2a43, #000);
+            font-family: 'Segoe UI', sans-serif;
+            color: white;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        h1 {
+            margin-top: 20px;
+            font-size: 3em;
+        }
+
+        p {
+            font-size: 1.2em;
+        }
+
+        
+
+        /* Positions (removed static pixel values to use responsive placements below) */
+
+        footer {
+            margin-top: 40px;
+            font-size: 1em;
+            opacity: 0.9;
+        }
+        /* Ornaments */
+.ornament {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid gold;
+  background: white;
+  transform-origin: top center;
+  animation: swing 3s ease-in-out infinite alternate;
+  z-index: 2; /* ensure ornaments appear above the tree */
+}
+
+.ornament img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.string {
+  position: absolute;
+  width: 2px;
+  background: gold;
+  top: -40px;
+  left: 50%;
+  height: 40px;
+}
+.tree {
+  position: relative;
+  margin: 40px auto 0;
+  width: 90%;
+  max-width: 800px; /* keep tree centered and responsive */
+  overflow: visible; /* allow ornaments to show outside edge */
+}
+.tree img {
+  width: 100%;
+  height: auto;
+  display: block;
+  z-index: 1; /* keep tree behind ornaments */
+}
+
+@keyframes swing {
+  from { transform: rotate(-5deg); }
+  to { transform: rotate(5deg); }
+}
+
+/* Ornament positions: place main ornaments on the RIGHT of the tree while keeping it centered */
+#o1 { top: 18%; left: -8%; right: auto; animation-duration: 2.8s; }
+#o2 { top: 35%; left: 6%; right: auto; animation-duration: 3.5s; }
+#o3 { top: 52%; left: -4%; right: auto; animation-duration: 3.2s; }
+
+/* Responsive tweaks for small screens */
+@media (max-width: 700px) {
+  .ornament { width: 90px; height: 90px; }
+  #o1 { top: 15%; left: -6%; right: auto; }
+  #o2 { top: 33%; left: 4%; right: auto; }
+  #o3 { top: 50%; left: -3%; right: auto; }
+}
+
+  
+/* ornaments on the right side */
+#o4 { top: 18%; right: -8%; left: auto; animation-duration: 2.8s; }
+#o5 { top: 35%; right: 6%; left: auto; animation-duration: 3.5s; }
+#o6 { top: 52%; right: -4%; left: auto; animation-duration: 3.2s; }
+
+/* ensure ornaments appear above the tree (handled in .ornament block above) */
+
+/* Snow */
+.snowflake {
+  position: fixed;
+  top: -10px;
+  color: white;
+  font-size: 1em;
+  animation: fall linear infinite;
+  opacity: 0.9;
+}
+
+@keyframes fall {
+  to { transform: translateY(110vh); }
+}
+
+/* Love note popup */
+.note-btn {
+  margin-top: 20px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 25px;
+  background: crimson;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.popup-content {
+  background: #fff;
+  color: #000;
+  padding: 25px;
+  border-radius: 15px;
+  max-width: 320px;
+  text-align: center;
+  animation: pop 0.4s ease;
+}
+
+@keyframes pop {
+  from { transform: scale(0.7); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.close {
+  margin-top: 15px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 20px;
+  background: crimson;
+  color: white;
+  cursor: pointer;
+}
+    </style>
+</head>
+<body>
+
+    <h1>🎄 Merry Christmas, Princes ❤️</h1>
+    <p style="color: palevioletred;">You make every day magical. I’m so grateful for you.</p>
+    <!-- Background Music -->
+  <audio autoplay loop>
+    <!-- Replace with your song -->
+    <source src="Jingle Bells (Instrumental).mp3" type="audio/mpeg">
+  </audio>
+
+    <div class="tree">
+       <img src="tree.png" alt="">
+
+        <!-- Photo ornaments -->
+        <div class="ornament" id="o1">
+            <div class="string"></div>
+            <img src="IMG_5990.JPG" alt="Us 1">
+        </div>
+
+        <div class="ornament" id="o2">
+            <div class="string"></div>
+            <img src="IMG_5991.JPG" alt="Us 2">
+        </div>
+
+        <div class="ornament" id="o3">
+            <div class="string"></div>
+            <img src="IMG_5992.JPG" alt="Us 3">
+        </div>
+
+        <div class="ornament" id="o4">
+            <div class="string"></div>
+            <img src="IMG_5996.jpg" alt="Us 3">
+        </div>
+
+        <div class="ornament" id="o5">
+            <div class="string"></div>
+            <img src="IMG_5191.jpg" alt="Us 3">
+        </div>
+
+        <div class="ornament" id="o6">
+            <div class="string"></div>
+            <img src="IMG_5997.JPG" alt="Us 3">
+        </div>
+        
+    </div>
+
+    <div class="trunk"></div>
+    <button class="note-btn" onclick="openNote()">💌 Open</button>
+
+  <div class="popup" id="popup">
+    <div class="popup-content">
+      <h3>My Love ❤️</h3>
+      <p>
+        Every moment with you is my favorite gift.
+        Thank you for being my warmth, my smile,
+        and my home. Merry Christmas ❤️<br>
+        <video id="loveVideo" src="vid.MP4" style="width: 200px; height: 200px; border-radius: 10px;" controls muted playsinline></video>
+      </p>
+      <button class="close" onclick="closeNote()">Close</button>
+    </div>
+  </div>
+
+    <footer>
+        All my love, Jeremiah ❤️
+    </footer>
+ <script>
+    // Snow generator
+    for (let i = 0; i < 40; i++) {
+      const snow = document.createElement('div');
+      snow.className = 'snowflake';
+      snow.innerHTML = '❄';
+      snow.style.left = Math.random() * 100 + 'vw';
+      snow.style.animationDuration = 5 + Math.random() * 5 + 's';
+      snow.style.fontSize = 12 + Math.random() * 18 + 'px';
+      document.body.appendChild(snow);
+    }
+
+    function openNote() {
+      const popup = document.getElementById('popup');
+      popup.style.display = 'flex';
+      const vid = document.getElementById('loveVideo');
+      if (vid) {
+        // try to play; some browsers block autoplay with sound, so we use muted+playsinline
+        vid.currentTime = 0;
+        const p = vid.play();
+        if (p && p.catch) p.catch(err => {
+          // If autoplay is blocked, ensure controls are visible so user can start playback
+          console.warn('Autoplay blocked:', err);
+          vid.controls = true;
+        });
+      }
+    }
+
+    function closeNote() {
+      const popup = document.getElementById('popup');
+      popup.style.display = 'none';
+      const vid = document.getElementById('loveVideo');
+      if (vid) { vid.pause(); vid.currentTime = 0; }
+    }
+  </script>
+
+</body>
+</html>
